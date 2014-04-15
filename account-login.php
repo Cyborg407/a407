@@ -29,27 +29,36 @@
 
 */
 
- // $HTML will be introduce to our source at the end of development!   
-    
-require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'varconfig.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'a407.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'member_functions.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'varconfig.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'verify.php');
+ dbconn(true);
+ 
+ ini_set('session.use_trans_sid', '1');
+ $language  = array_merge(load_language('login-account'));
+ $freshpage = new verify();
+ $freshpage -> create(take-account);
+ 
+ $HTML .= "<!doctype html>"
+          . $rightclickban;
 
- echo "<!doctype html>"
-      . $rightclickban;
+ $HTML .= "<head>
+           <link rel=\"shortcut icon\" href='./images/a407.png' />
+           <title> {$a407['title']} :: {$a407['login']} </title>
+           <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />
+           <meta name=\"author\" content=\"Cyborg407, BamBam0077, ZajferX\" />
+           <meta name=\"generator\" content=\"description\" content=\"a407 Beta\" />
+           <meta name=\"description\" content=\"Community Support\" />
+           <meta name=\"keywords\" contetn=\"https://forum.a407.eu\" />
+           <link rel=\"stylesheet\" href=\"./templates/407/styles.css\" />
+           <script type=\"text/javascript\" src=\"./jquery/jquery-1.3.2.js\" ></script>
+           <script type=\"text/javascript\" src=\"./jquery/interface.js\" ></script>
+           </head>
+           <body>
+           </body>
+           </html>";
+           
+ echo $footer() . $HTML;  
 
- echo "<head>
-       <link rel=\"shortcut icon\" href='./images/a407.png' />
-       <title> {$a407['title']} :: {$a407['login']} </title>
-       <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />
-       <meta name=\"author\" content=\"Cyborg407, BamBam0077, ZajferX\" />
-       <meta name=\"generator\" content=\"description\" content=\"a407 Beta\" />
-       <meta name=\"description\" content=\"Community Support\" />
-       <meta name=\"keywords\" contetn=\"https://forum.a407.eu\" />
-       <link rel=\"stylesheet\" href=\"./templates/407/styles.css\" />
-       <script type=\"text/javascript\" src=\"./jquery/jquery-1.3.2.js\" ></script>
-       <script type=\"text/javascript\" src=\"./jquery/interface.js\" ></script>
-       </head>
-       <body>
-       
-       </body>
-       </html>";
 ?>
