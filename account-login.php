@@ -33,13 +33,13 @@
 
 */
 
- require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'a407.php');
- require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'member_functions.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'407.php');
  require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'varconfig.php');
+ require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'member_functions.php');
  require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'settings'.DIRECTORY_SEPARATOR.'verify.php');
  dbconn(true);
  
- ini_set('session.use_trans_sid', '1');
+ ini_set('session.use_trans_sid', '0');
  $language = array_merge(load_language('login-account'));
  $freshpage = new verify();
  $freshpage -> create(take-account);
